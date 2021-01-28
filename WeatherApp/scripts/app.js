@@ -13,6 +13,7 @@ const details = document.querySelector('.details');
 const time  = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 
+const forecast = new Forecast
 
 const updateUI = (data) =>{
 
@@ -60,22 +61,22 @@ const updateUI = (data) =>{
 }
 
 
-const updateCity = async city => {
+// const updateCity = async city => {
 
-    console.log(city);
-    // SOS to just call the two function from the forecast.js 
-    //     we must inmport the forrecast.js file before the app.js in the HTML file
+//     console.log(city);
+//     // SOS to just call the two function from the forecast.js 
+//     //     we must inmport the forrecast.js file before the app.js in the HTML file
 
-    const cityDets = await getCity(city);
+//     const cityDets = await getCity(city);
 
-    const weather = await getCurrentConditions(cityDets.Key);
+//     const weather = await getCurrentConditions(cityDets.Key);
 
-    return {
-        cityDets:cityDets,
-        weather: weather
-    };
+//     return {
+//         cityDets:cityDets,
+//         weather: weather
+//     };
 
-}
+// }
 
 
 cityForm.addEventListener('submit', e => {
@@ -89,9 +90,13 @@ cityForm.addEventListener('submit', e => {
     cityForm.reset(); // reset form now that i have the value
 
     //update ui with the new city
-    updateCity(city)
+    forecast.updateCity(city)
         .then(data => {updateUI(data);}) 
         .catch(err => console.log(err));
+
+    //Make the call with a class
+
+
 
     //! Modificaltion: we want to save the last city in the local storage //
     localStorage.setItem('city',city);
@@ -101,7 +106,7 @@ cityForm.addEventListener('submit', e => {
 // check if there is an item in the local storage every time we refresh the page
 if (localStorage.getItem('city')){
 
-    updateCity(localStorage.getItem('city'))
+    forecast.updateCity(localStorage.getItem('city'))
         .then(data => updateUI(data))
         .catch(err => console.log('There is an error',err));
 
