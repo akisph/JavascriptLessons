@@ -83,7 +83,8 @@ cityForm.addEventListener('submit', e => {
     // prevent the default actions
     e.preventDefault();
 
-    const city = cityForm.city.value.trim(); // obtain city value user added
+    const city = cityForm.city.value.trim(); // obtain city value user added   
+
 
     cityForm.reset(); // reset form now that i have the value
 
@@ -92,9 +93,17 @@ cityForm.addEventListener('submit', e => {
         .then(data => {updateUI(data);}) 
         .catch(err => console.log(err));
 
+    //! Modificaltion: we want to save the last city in the local storage //
+    localStorage.setItem('city',city);
 
+});
 
-})
+// check if there is an item in the local storage every time we refresh the page
+if (localStorage.getItem('city')){
 
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(err => console.log('There is an error',err));
 
-//update the card that exist in th yui
+}
+
