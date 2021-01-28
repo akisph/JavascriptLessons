@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Link Style css-->
+    <link rel='stylesheet' href='style.css'>
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/f590b5569c.js" crossorigin="anonymous"></script>
+    <title>Akis ToDo List</title>
+</head>
+<body>
+    
+    <!-- A bootstrap class keeps everything in the center-->
+    <div class = 'container'>
+        <h1 class="text-center mb-4">  My ToDo List </h1>
+
+        <!-- Form for searching -->
+        <form class="search"> 
+            <input type="text" class="form-control m-auto" name="search" placeholder="search todos" />
+        </form>
+
+        <!-- List with all the todos -->
+        <ul class="list-group todos mx-auto text-light">
+            <!-- Each li is an item from the list-->
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span>Read Javascript</span>
+                <!--i tag used for FONT AWESOME smbols-->
+                <i class="far fa-trash-alt delete"></i>
+            </li>
+
+        </ul>
+        
+        <!--Form for adding a todo -->
+        <form class="add text-center my-4">
+            <label class="text-light"> Add a new todo... </label>
+            <input type="text" class="form-control m-auto" name='add'>
+        </form>
+
+    </div>
+    
+    <!-- Link Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>

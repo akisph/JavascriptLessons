@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Link Style css-->
+    <link rel='stylesheet' href='style.css'>
+
+    <title>Weather APP</title>
+</head>
+<body>
+
+    <div class="container my-5 mx-auto">
+        <h1 class='text-muted text-center my-4'>
+            Akis Weather App
+        </h1>
+        
+        <form class="change-location my-4 text-center text-muted">
+            <label for="city"> Enter a location for weather information </label>
+            <input type="text" name="city"  class= " form-control p-4">
+        </form>
+
+        <div class="card shadow-lg rounded d-none">
+            <!---Initial wiil use the placeholder image-->
+            <img src="https://via.placeholder.com/400x300" class='time card-img-top'>
+
+            <!--make div for the weather icon-->
+            <div class="icon bg-light mx-auto text-ceter">
+                <img src="" alt="">
+            </div>
+            <!-- make a div for the additional info-->
+            <div class="text-muted text-uppercase text-center details">
+                <h5 class="my-3">
+                    City Name
+                </h5>
+                <div class="my-3">
+                    Weather Condition
+                </div>
+                <div class="display-4 my-4">
+                    <!---span for the temperature-->
+                    <span>temp</span>
+                    <!--span for the degree sign-->
+                    <span>&deg;</span> <!-- &deg; = gives us the degree sign-->
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="scripts/forecast.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
