@@ -1,0 +1,1 @@
+(()=>{var e={525:()=>{}},t={};function o(n){if(t[n])return t[n].exports;var r=t[n]={exports:{}};return e[n](r,r.exports,o),r.exports}(()=>{"use strict";console.log("dom file");const e=document.querySelector("body");o(525),console.log("index file"),(t=>{const o=document.createElement("h1");o.textContent="test",e.appendChild(o)})(),e.style.background="peachbuff",users})()})();
